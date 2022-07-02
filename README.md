@@ -5,6 +5,7 @@ Rust Error Messages Wizard - Write Good Error Message
 
 * errors defined by `thiserror`
 * `error-stack` friendly
+* Convert `anyhow::Result` to `error-stack` Report
 
 # Error Code Design
 
