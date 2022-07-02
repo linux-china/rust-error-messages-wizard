@@ -1,4 +1,4 @@
-use error_stack::{IntoReport, Result, ResultExt, report};
+use error_stack::{IntoReport, Result, ResultExt, bail};
 use serde::{Deserialize, Serialize};
 use crate::errors::{AccountError, ConfigError};
 
@@ -33,5 +33,5 @@ fn parse_config() -> Result<ConfigMap, ConfigError> {
 }
 
 fn find_nick_by_id(id: u64) -> Result<String, AccountError> {
-    Err(report!(AccountError::NotFound(id.to_string())))
+    bail!(AccountError::NotFound(id.to_string()))
 }
