@@ -1,4 +1,4 @@
-use error_stack::{Context, Report, Result};
+use error_stack::{Report, Result};
 use thiserror::Error as ThisError;
 
 #[derive(ThisError, Debug)]
