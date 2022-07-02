@@ -19,3 +19,18 @@ pub enum AccountError {
     #[error("APP-101500: unknown internal error")]
     Unknown,
 }
+
+#[derive(Error, Debug)]
+pub enum DataStoreError {
+    #[error("APP-120101: data store disconnected")]
+    Disconnect(#[from] std::io::Error),
+    #[error("APP-120404: the data for key `{0}` is not found")]
+    NotFound(String),
+    #[error("APP-120401: invalid header (expected {expected:?}, found {found:?})")]
+    InvalidHeader {
+        expected: String,
+        found: String,
+    },
+    #[error("APP-120500: unknown data store error")]
+    Unknown,
+}
