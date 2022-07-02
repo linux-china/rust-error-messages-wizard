@@ -1,5 +1,5 @@
 use thiserror::Error as ThisError;
-use error_stack::{IntoReport, Result, ResultExt, report};
+use error_stack::{ResultExt};
 use rust_error_messages_wizard::error_stack_anyhow::AnyhowIntoReport;
 
 fn main() {
