@@ -1,6 +1,7 @@
 use thiserror::Error as ThisError;
 
 /// errors for config component: app-100
+#[allow(dead_code)]
 #[derive(ThisError, Debug)]
 pub enum ConfigError {
     #[error("APP-100404: Failed to read config file(Config File NotFound): can not find file {0} --- Solutions: 1. check config exits or not")]
@@ -10,6 +11,7 @@ pub enum ConfigError {
 }
 
 /// errors for account component: APP-101
+#[allow(dead_code)]
 #[derive(ThisError, Debug)]
 pub enum AccountError {
     #[error("APP-101404: Failed to find account(Account Not Found): can not find account with {0} --- Solutions: 1. check account ID")]
@@ -20,6 +22,7 @@ pub enum AccountError {
     Unknown,
 }
 
+#[allow(dead_code)]
 #[derive(ThisError, Debug)]
 pub enum DataStoreError {
     #[error("APP-120101: DataStore disconnected(DataStore Disconnected): can not connect to DataStore --- Solutions: 1. check DataStore connection")]
