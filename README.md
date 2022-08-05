@@ -15,6 +15,7 @@ Rust Error Messages Wizard - Write Good Error Message
 use thiserror::Error as ThisError;
 
 /// errors for config component: app-100
+#[allow(dead_code)]
 #[derive(ThisError, Debug)]
 pub enum ConfigError {
     #[error("APP-100404: config file not found: {0}")]
