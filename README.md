@@ -33,10 +33,10 @@ use error_stack::{IntoReport, Result, ResultExt, report};
 fn parse_config() -> Result<ConfigMap, ConfigError> {
     let json_file = "config.json";
     let config = std::fs::read_to_string(json_file)
-        .report()
+        .into_report()
         .change_context(ConfigError::NotFound(json_file.to_string()))?;
     let map: ConfigMap = serde_json::from_str(&config)
-        .report()
+        .into_report()
         .change_context(ConfigError::Invalid(json_file.to_string()))?;
     Ok(map)
 }
