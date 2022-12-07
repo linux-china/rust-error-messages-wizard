@@ -21,7 +21,7 @@ pub trait AnyhowIntoReport: Sized {
     type Err;
 
     /// Converts the [`Err`] variant of the [`Result`] to a [`Report`]
-    fn report(self) -> Result<Self::Ok, Self::Err>;
+    fn into_report(self) -> Result<Self::Ok, Self::Err>;
 }
 
 impl<T> AnyhowIntoReport for anyhow::Result<T> {
@@ -29,7 +29,7 @@ impl<T> AnyhowIntoReport for anyhow::Result<T> {
     type Err = AnyhowError;
 
     #[track_caller]
-    fn report(self) -> Result<T, AnyhowError> {
+    fn into_report(self) -> Result<T, AnyhowError> {
         match self {
             Ok(value) => Ok(value),
             Err(error) => Err(Report::from(AnyhowError { source: error })),
