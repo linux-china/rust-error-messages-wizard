@@ -5,7 +5,7 @@ use rust_error_messages_wizard::error_stack_anyhow::AnyhowIntoReport;
 fn main() {
     let num_text = "11T11";
     match parse_num(num_text)
-        .report()
+        .into_report()
         .attach_printable_lazy(|| format!("Failed to parser num {}", num_text))
         .change_context(AppError::Unknown) {
         Ok(num) => println!("num: {}", num),
