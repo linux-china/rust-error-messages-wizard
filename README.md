@@ -47,3 +47,4 @@ fn parse_config() -> Result<ConfigMap, ConfigError> {
 * thiserror: https://github.com/dtolnay/thiserror
 * error-stack: https://github.com/hashintel/hash/tree/main/packages/libs/error-stack
 * Java Error Messages Wizard: https://github.com/linux-china/java-error-messages-wizard
+* How To Wrap Your Errors With Enums When Using Error-Stack: https://betterprogramming.pub/how-to-wrap-your-errors-with-enums-when-using-error-stack-77b122016e6e
